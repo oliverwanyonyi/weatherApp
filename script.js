@@ -9,7 +9,7 @@ form.addEventListener("submit", (e) => {
   console.log(searchQuery);
   fetchWeatherInfo(searchQuery);
   form.reset();
-  searchQuery = "";
+  
 });
 
 const fetchWeatherInfo = (searchQuery) => {

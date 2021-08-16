@@ -1,7 +1,7 @@
 ## Weather app
 
 ![weather app](assets/weather-app.png)
-[Live Demo]()
+[Live Demo](https://weather-app-d8bxyiakg-oliverwanyonyi.vercel.app/)
 
 ### description
 
