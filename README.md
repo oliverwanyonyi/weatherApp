@@ -10,7 +10,7 @@ weather app built with javascript to exercise loading data from third party apis
 ```javascript
 fetch(url)
 .then(res=> res.json())
-.then(data console.log(data)).catch(err=>console.log(err))
+.then(data => console.log(data)).catch(err=>console.log(err))
 ```
 
 ### features
