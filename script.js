@@ -7,9 +7,9 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchQuery = e.target.query.value;
   console.log(searchQuery);
+  if (searchQuery === "") return;
   fetchWeatherInfo(searchQuery);
   form.reset();
-  
 });
 
 const fetchWeatherInfo = (searchQuery) => {
@@ -20,7 +20,7 @@ const fetchWeatherInfo = (searchQuery) => {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("Search for a valid city");
+        throw new Error("The city you entered seems to be invalid");
       }
     })
     .then((data) => weatherUi(data))

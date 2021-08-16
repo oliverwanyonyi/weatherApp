@@ -232,6 +232,7 @@ section {
 
 .info-wrapper .info span {
   font-size: 0.8rem;
+  white-space: nowrap;
   color: gray;
 }
 
