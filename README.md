@@ -24,4 +24,4 @@ would love to implement it in ansyc await syntax feel free to play around with t
 - html
 - css
 - javascript
-- [openweather](https://openweathermap.org)
+- [openweather](https://openweathermap.org)Api
