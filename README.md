@@ -5,7 +5,7 @@
 
 ### description
 
-weather app built with javascript to exercise loading data from third party apis asynchronously with javascript and displaying weather information about a city
+weather app built with javascript to exercise fetching data from third party apis asynchronously with javascript and using it to displaying weather information about a city
 
 ```javascript
 fetch(url)
