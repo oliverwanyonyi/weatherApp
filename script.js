@@ -1,4 +1,5 @@
 "use strict";
+
 const form = document.querySelector("form");
 const weatherContainer = document.querySelector(".container");
 const countrylabel = document.querySelector(".location");
@@ -24,15 +25,7 @@ const fetchWeatherInfo = (searchQuery) => {
       }
     })
     .then((data) => weatherUi(data))
-    .catch((err) => renderError(err))
-    .finally(() => {
-      document.querySelectorAll(".load").forEach((load) => {
-        console.log(load);
-        setTimeout(() => {
-          load.style.display = "none";
-        }, 6000);
-      });
-    });
+    .catch((err) => renderError(err));
 };
 
 const weatherUi = (data) => {
