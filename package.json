@@ -1,0 +1,20 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Weather app with vanilla javascript",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverwanyonyi/weatherApp.git"
+  },
+  "author": "Oliver Wanyonyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliverwanyonyi/weatherApp/issues"
+  },
+  "homepage": "https://github.com/oliverwanyonyi/weatherApp#readme"
+}

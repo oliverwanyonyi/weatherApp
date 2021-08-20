@@ -17,7 +17,7 @@
 }
 
 body {
-  background: var(--dark);
+  background: var(--light-grey);
   color: var(--white);
 }
 
@@ -32,30 +32,32 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem 2.5rem;
-  background: #51bfeb;
+  background: var(--light-grey);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
   font-weight: normal;
-  color: var(--light-grey);
+  color: #80c0fc;
+  text-align: center;
   margin-bottom: 1.5rem;
   font-size: 1rem;
-  text-transform: capitalize;
+  white-space: nowrap;
 }
 
 .err-container h1 {
-  color: var(--white);
-  background: var(--primary);
+  color: #80c0fc;
   display: block;
-  width: 80vw;
+  max-width: 500px;
   margin: 0 auto;
   padding: 1rem 1rem;
   font-size: 1rem;
   font-weight: normal;
   text-align: center;
   margin-bottom: 0.8rem;
+  -webkit-box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
+          box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
   border-radius: 0.3rem;
 }
 
@@ -78,7 +80,7 @@ button {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;
-  color: var(--primary);
+  color: #80c0fc;
 }
 
 input {
@@ -89,10 +91,9 @@ input {
   width: 330px;
   outline: 0;
   border: 0;
-  border-bottom: 1px solid var(--grey);
-  background: var(--light-grey);
-  border: 0;
   border-radius: 0.2rem;
+  -webkit-box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+          box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 }
 
 input:focus {
@@ -116,20 +117,19 @@ input:focus {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  opacity: 0;
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
-}
-
-.load {
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
 }
 
 .weather-app {
+  background: var(--light-grey);
   margin: 1.5rem 1rem;
+  overflow: hidden;
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
+          box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .alpha-code {
@@ -139,7 +139,9 @@ input:focus {
   font-weight: normal;
   font-size: 1.2rem;
   color: #eb1a47;
-  background: var(--white);
+  background: var(--light-grey);
+  -webkit-box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+          box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
   padding: 0.3rem;
   border-radius: 0.3rem;
   text-transform: uppercase;
@@ -165,15 +167,13 @@ section {
           flex-direction: column;
   margin: 0 auto;
   background: linear-gradient(10deg, #eb1a47, #ee1bcb);
-  padding: 5rem 2.5rem;
+  padding: 2rem 2.5rem;
   text-align: center;
-  margin-bottom: 1rem;
-  border-radius: 0.2rem;
   position: relative;
-  z-index: 1;
 }
 
 .day-details .condition {
+  margin-top: 2rem;
   font-weight: normal;
   color: var(--white);
 }
@@ -183,11 +183,11 @@ section {
   font-size: 1rem;
   color: var(--primary);
   position: absolute;
-  top: -0.5rem;
+  top: 0.5rem;
   padding: 0.5rem;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  background: var(--white);
+  -webkit-box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+          box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  background: var(--light-grey);
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -204,9 +204,8 @@ section {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background: var(--white);
   padding: 0.5rem 2.5rem;
-  border-radius: 0.2rem;
+  position: relative;
 }
 
 .info-wrapper .info {
@@ -223,6 +222,10 @@ section {
 
 .info-wrapper .info span:nth-child(1) {
   margin-bottom: 0.5rem;
+  -webkit-box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+          box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .info-wrapper .info span:nth-child(1) i {
@@ -242,20 +245,21 @@ section {
   margin-top: 0.3rem;
 }
 
-span.img {
-  width: 5rem;
-  height: 5rem;
-  margin-top: 1rem;
+span.icon {
+  width: 10rem;
 }
 
-span.img img {
+span.icon img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 @media (max-width: 500px) {
   section {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
+  }
+  .err-container h1 {
+    max-width: 350px;
   }
 }
 /*# sourceMappingURL=style.css.map */

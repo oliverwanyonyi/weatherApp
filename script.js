@@ -20,11 +20,19 @@ const fetchWeatherInfo = (searchQuery) => {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("The city you entered seems to be invalid");
+        throw new Error(`${searchQuery} not found !`);
       }
     })
     .then((data) => weatherUi(data))
-    .catch((err) => renderError(err));
+    .catch((err) => renderError(err))
+    .finally(() => {
+      document.querySelectorAll(".load").forEach((load) => {
+        console.log(load);
+        setTimeout(() => {
+          load.style.display = "none";
+        }, 6000);
+      });
+    });
 };
 
 const weatherUi = (data) => {
@@ -39,7 +47,11 @@ const weatherUi = (data) => {
   const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
   countrylabel.innerText = ` Weather information for ${name}`;
 
-  const html = `<div class="weather-app load">  <div class="day-details">
+  const html = `<div class="weather-app">
+  
+  
+  
+  <div class="day-details">
   <h1 class="alpha-code"> ${alphaCode}</h1>
   <h2 class="day">${date}</h2>
   <h2 class="condition">${weatherDesc}</h2>
@@ -67,16 +79,12 @@ const weatherUi = (data) => {
 </div></div>`;
 
   weatherContainer.insertAdjacentHTML("beforeend", html);
-  weatherContainer.style.opacity = 1;
-  document
-    .querySelectorAll(".weather-app")
-    .forEach((ui) => ui.classList.remove("load"));
 };
 
 const renderError = (err) => {
   console.log(err.message);
   const h1 = document.createElement("h1");
-  h1.textContent = err.message;
+  h1.textContent = err.message.replace(err.message, "Something went wrong");
   errContainer.insertAdjacentElement("beforeend", h1);
   setTimeout(() => {
     h1.remove();
