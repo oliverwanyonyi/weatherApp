@@ -1,9 +1,9 @@
 {
-  "name": "weather pwa app",
-  "short_name": "weather pwa",
+  "name": "Thunder bolt",
+  "short_name": "Thunder bolt",
   "start_url": ".",
-  "background_color": "#6dcdb1",
-  "theme_color": "#009578",
+  "background_color": "#344ddb",
+  "theme_color": "#0623c5",
   "display": "standalone",
   "icons": [
     {

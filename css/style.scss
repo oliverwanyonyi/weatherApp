@@ -12,12 +12,12 @@
   --grey: #acacac;
   --primary: #1c1a24;
   --secondary: #0623c5;
+
   --dark: #090718;
 }
 body {
   background: var(--light-grey);
   color: var(--white);
-
   min-height: 100vh;
   overflow-y: auto;
 }
@@ -36,6 +36,7 @@ h1 {
   margin-bottom: 1.5rem;
   font-size: 1rem;
   white-space: nowrap;
+  text-transform: capitalize;
 }
 .err-container {
   h1 {
@@ -46,6 +47,7 @@ h1 {
     font-size: 1rem;
     font-weight: normal;
     text-align: center;
+    text-transform: capitalize;
     margin-bottom: 0.8rem;
     box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
     border-radius: 0.3rem;
@@ -72,7 +74,6 @@ button {
 input {
   padding: 0 1rem;
   color: var(--dark);
-  font-weight: bold;
   font-size: 1.1rem;
   height: 100%;
   width: 330px;
