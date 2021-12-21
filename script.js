@@ -1,14 +1,27 @@
 "use strict";
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("sw.js")
+    .then((registration) => {
+      console.log("sw registered ");
+      console.log(registration);
+    })
+    .catch((err) => console.log(err));
+}
+
 const form = document.querySelector("form");
 const weatherContainer = document.querySelector(".container");
 const countrylabel = document.querySelector(".location");
 const errContainer = document.querySelector(".err-container");
+const loader = document.querySelector(".loader");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const searchQuery = e.target.query.value;
   console.log(searchQuery);
   if (searchQuery === "") return;
+  loader.classList.add("active");
   fetchWeatherInfo(searchQuery);
   form.reset();
 });
@@ -21,14 +34,19 @@ const fetchWeatherInfo = (searchQuery) => {
       if (res.ok) {
         return res.json();
       } else {
+        loader.classList.remove("active");
         throw new Error(`${searchQuery} not found !`);
       }
     })
     .then((data) => weatherUi(data))
-    .catch((err) => renderError(err));
+    .catch((err) => {
+      loader.classList.remove("active");
+      renderError(err);
+    });
 };
 
 const weatherUi = (data) => {
+  loader.classList.remove("active");
   const { main, name, sys, wind, weather } = data;
   const { temp, humidity } = main;
   const finaltemp = Math.round(temp - 273);
@@ -77,7 +95,7 @@ const weatherUi = (data) => {
 const renderError = (err) => {
   console.log(err.message);
   const h1 = document.createElement("h1");
-  h1.textContent = err.message.replace(err.message, "Something went wrong");
+  h1.textContent = err.message;
   errContainer.insertAdjacentElement("beforeend", h1);
   setTimeout(() => {
     h1.remove();
