@@ -17,7 +17,6 @@ fetch(url)
 
 - search weather information of a city
 - error handling incase the user query is invalid
-- i'm yet to implement local storage to persist user data.
 
 ### Built with
 
