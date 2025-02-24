@@ -89,7 +89,7 @@ const weatherUi = (data) => {
   </div>
 </div></div>`;
 
-  weatherContainer.insertAdjacentHTML("beforeend", html);
+  weatherContainer.innerHTML = html
 };
 
 const renderError = (err) => {
